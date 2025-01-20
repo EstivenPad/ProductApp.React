@@ -1,10 +1,27 @@
+import './index.css';
+import Home from './Home';
+import ColorPage from './pages/ColorPage';
+import ProductPage from './pages/ProductPage';
+import ColorForm from './views/ColorForm';
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { ColorProvider } from './context/color/ColorContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ColorProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} >
+            <Route path="colors">
+              <Route index element={<ColorPage/>}/>
+              <Route path=":form" element={<ColorForm/>}/>
+            </Route>
+            <Route path="products" element={<ProductPage/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ColorProvider>
   </StrictMode>,
 )
