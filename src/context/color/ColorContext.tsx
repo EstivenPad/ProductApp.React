@@ -93,7 +93,7 @@ export const ColorProvider = ({children}:ColorContextProviderProps) => {
         getColorDetail,
         addNewColor,
         updateColor,
-        deleteColor
+        deleteColor,
     };
 
     return (

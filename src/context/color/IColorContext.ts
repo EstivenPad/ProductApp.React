@@ -8,5 +8,5 @@ export interface IColorContext {
     getColorDetail: (colorId: number) => Promise<void>,
     addNewColor: (color: IColor) => Promise<void>,
     updateColor: (color: IColor) => Promise<void>,
-    deleteColor: (colorId: number) => Promise<boolean>
+    deleteColor: (colorId: number) => Promise<boolean>,
 }

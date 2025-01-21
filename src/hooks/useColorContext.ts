@@ -10,7 +10,7 @@ export function useColorContext() {
     
     if(!context){
         throw new Error(
-            "useColorContext must be used within ColorProvider"
+            "useColorContext debe ser usado dentro de ColorProvider"
         );
     }
 
